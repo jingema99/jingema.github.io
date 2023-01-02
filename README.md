@@ -1,2 +1,2 @@
-# zhaoyingpan.github.io
-Hello I'm Zhaoying Pan! Visit my homepage at https://zhaoyingpan.github.io/
+# jingema.github.io
+I am Jinge Ma, a master's student at the University of Michigan! Visit my homepage at https://jingema99.github.io/jingema.github.io/
