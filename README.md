@@ -17,3 +17,5 @@ I am a Ph.D. candidate in Electrical and Computer Engineering at Purdue Universi
 - `assets/pdf/prelim_slides.pdf` — preliminary exam slides
 
 To add a paper, copy one `<article class="pub">` block in `index.html` and drop a thumbnail into `assets/img/pubs/`.
+
+The site has an English / Chinese toggle (top right; `?lang=zh` links straight to Chinese). Paper entries stay in English. Every other piece of text has two copies, `<span data-l="en">…</span><span data-l="zh">…</span>`, and CSS shows only the active one — so when you edit a sentence, update both.

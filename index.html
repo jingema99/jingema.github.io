@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jinge Ma</title>
   <meta name="description" content="Jinge Ma — Ph.D. candidate in ECE at Purdue University (VIPER Lab). Continual learning, multimodal vision-language models, and AI-assisted dietary assessment.">
+  <script>
+    // Pick the language before first paint: ?lang=zh|en, then the visitor's last choice, else English.
+    (function () {
+      var lang = 'en';
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        if (q === 'zh' || q === 'en') lang = q;
+        else if (localStorage.getItem('lang') === 'zh') lang = 'zh';
+      } catch (e) {}
+      if (lang === 'zh') {
+        document.documentElement.lang = 'zh-CN';
+        document.title = '马金戈 | Jinge Ma';
+      }
+    })();
+  </script>
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,30 +27,36 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="assets/css/style.css?v=3">
+  <link rel="stylesheet" href="assets/css/style.css?v=4">
 </head>
 
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="#">Jinge Ma</a>
-      <nav class="nav" aria-label="Sections">
-        <a href="#about">About</a>
-        <a href="#news">News</a>
-        <a href="#publications">Publications</a>
-        <a href="#talks">Talks</a>
-        <a href="#education">Education</a>
-        <a href="assets/pdf/CV_Jinge.pdf" target="_blank" rel="noopener">CV</a>
-      </nav>
+      <a class="brand" href="#"><span data-l="en">Jinge Ma</span><span data-l="zh">马金戈</span></a>
+      <div class="header-right">
+        <nav class="nav" aria-label="Sections">
+          <a href="#about"><span data-l="en">About</span><span data-l="zh">关于</span></a>
+          <a href="#news"><span data-l="en">News</span><span data-l="zh">动态</span></a>
+          <a href="#publications"><span data-l="en">Publications</span><span data-l="zh">论文</span></a>
+          <a href="#talks"><span data-l="en">Talks</span><span data-l="zh">报告</span></a>
+          <a href="#education"><span data-l="en">Education</span><span data-l="zh">教育</span></a>
+          <a href="assets/pdf/CV_Jinge.pdf" target="_blank" rel="noopener"><span data-l="en">CV</span><span data-l="zh">简历</span></a>
+        </nav>
+        <button class="lang-toggle" id="lang-toggle" type="button" title="切换到中文" aria-label="切换到中文">
+          <i class="fa-solid fa-language" aria-hidden="true"></i><span data-l="en">中文</span><span data-l="zh">EN</span>
+        </button>
+      </div>
     </div>
   </header>
 
   <div class="layout">
     <aside class="sidebar">
       <img class="avatar" src="assets/img/profile.jpg" alt="Photo of Jinge Ma" width="210" height="262">
-      <h1>Jinge Ma</h1>
-      <p class="role">Ph.D. Candidate</p>
-      <p class="affil">VIPER Lab, Purdue University</p>
+      <h1><span data-l="en">Jinge Ma</span><span data-l="zh">马金戈</span></h1>
+      <p class="alt-name" data-l="zh">Jinge Ma</p>
+      <p class="role"><span data-l="en">Ph.D. Candidate</span><span data-l="zh">博士候选人</span></p>
+      <p class="affil"><span data-l="en">VIPER Lab, Purdue University</span><span data-l="zh">普渡大学 VIPER 实验室</span></p>
       <div class="socials">
         <a href="#contact" class="js-email" title="Email" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
         <a href="https://scholar.google.com/citations?user=xl5EUwcAAAAJ&amp;hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
@@ -44,21 +65,21 @@
         <a href="assets/pdf/CV_Jinge.pdf" target="_blank" rel="noopener" title="CV" aria-label="CV"><i class="fa-regular fa-file-lines"></i></a>
       </div>
       <div class="card">
-        <h3>Research Interests</h3>
+        <h3><span data-l="en">Research Interests</span><span data-l="zh">研究方向</span></h3>
         <ul>
-          <li><i class="fa-solid fa-angle-right"></i>Computer Vision</li>
-          <li><i class="fa-solid fa-angle-right"></i>Continual Learning</li>
-          <li><i class="fa-solid fa-angle-right"></i>Multimodal LLMs</li>
-          <li><i class="fa-solid fa-angle-right"></i>LLM Agents</li>
-          <li><i class="fa-solid fa-angle-right"></i>AI-Assisted Dietary Assessment</li>
+          <li><i class="fa-solid fa-angle-right"></i><span data-l="en">Computer Vision</span><span data-l="zh">计算机视觉</span></li>
+          <li><i class="fa-solid fa-angle-right"></i><span data-l="en">Continual Learning</span><span data-l="zh">持续学习</span></li>
+          <li><i class="fa-solid fa-angle-right"></i><span data-l="en">Multimodal LLMs</span><span data-l="zh">多模态大模型</span></li>
+          <li><i class="fa-solid fa-angle-right"></i><span data-l="en">LLM Agents</span><span data-l="zh">大模型智能体</span></li>
+          <li><i class="fa-solid fa-angle-right"></i><span data-l="en">AI-Assisted Dietary Assessment</span><span data-l="zh">AI 辅助膳食评估</span></li>
         </ul>
       </div>
     </aside>
 
     <main>
       <section id="about">
-        <h2>About</h2>
-        <p>
+        <h2><span data-l="en">About</span><span data-l="zh">关于我</span></h2>
+        <p data-l="en">
           I am a Ph.D. candidate in Electrical and Computer Engineering at Purdue University, working in the
           <a href="https://www.viperlab.org/" target="_blank" rel="noopener">Video and Image Processing Laboratory (VIPER Lab)</a>
           with <a href="https://engineering.purdue.edu/~zhu0/" target="_blank" rel="noopener">Prof. Fengqing Maggie Zhu</a>.
@@ -66,35 +87,60 @@
           requirements of their tasks, with a focus on <strong>continual learning</strong> and <strong>multimodal vision-language models</strong>.
           I also work on AI-assisted dietary assessment, such as estimating food portions from images and egocentric video.
         </p>
-        <p>
+        <p data-l="zh">
+          我是普渡大学电子与计算机工程专业的博士候选人，在<a href="https://www.viperlab.org/" target="_blank" rel="noopener">视频与图像处理实验室（VIPER Lab）</a>从事研究，导师是
+          <a href="https://engineering.purdue.edu/~zhu0/" target="_blank" rel="noopener">Fengqing Maggie Zhu 教授</a>。<!--
+          -->我的研究致力于构建能够根据数据特性和任务需求进行调整的<strong>自适应视觉系统</strong>，重点关注<strong>持续学习</strong>和<strong>多模态视觉-语言模型</strong>。<!--
+          -->我也从事 AI 辅助膳食评估方面的研究，例如基于图像和第一人称视频估计食物份量。
+        </p>
+        <p data-l="en">
           Before Purdue, I received my M.S. in Electrical and Computer Engineering from the University of Michigan, advised by
           <a href="https://public.websites.umich.edu/~qmei/" target="_blank" rel="noopener">Prof. Qiaozhu Mei</a>,
           and my B.E. in Electronic and Information Engineering from the University of Chinese Academy of Sciences, advised by
           <a href="https://people.ucas.ac.cn/~qxye" target="_blank" rel="noopener">Prof. Qixiang Ye</a>.
         </p>
+        <p data-l="zh">
+          在此之前，我在密歇根大学获得电子与计算机工程硕士学位，导师是
+          <a href="https://public.websites.umich.edu/~qmei/" target="_blank" rel="noopener">Qiaozhu Mei 教授</a>；在中国科学院大学获得电子信息工程学士学位，导师是
+          <a href="https://people.ucas.ac.cn/~qxye" target="_blank" rel="noopener">Qixiang Ye 教授</a>。
+        </p>
         <p class="callout" id="contact">
-          I am looking for 3–6 month research or MLE internships starting in Spring or Summer 2027.
-          Feel free to reach out at <span class="email-text">ma859 [at] purdue [dot] edu</span>.
+          <span data-l="en">I am looking for 3–6 month research or MLE internships starting in Spring or Summer 2027.
+          Feel free to reach out at <span class="email-text">ma859 [at] purdue [dot] edu</span>.</span>
+          <span data-l="zh">我正在寻找 2027 年春季或夏季开始、为期 3–6 个月的研究或机器学习工程（MLE）实习，欢迎通过
+          <span class="email-text">ma859 [at] purdue [dot] edu</span> 联系我。</span>
         </p>
       </section>
 
       <section id="news">
-        <h2>News</h2>
+        <h2><span data-l="en">News</span><span data-l="zh">动态</span></h2>
         <ul class="news">
-          <li><time>2026-10</time><span>Passed my preliminary exam and became a <strong>Ph.D. candidate</strong>. <a href="assets/pdf/prelim_slides.pdf" target="_blank" rel="noopener">[Slides]</a></span></li>
-          <li><time>2026-09</time><span>New preprint on cross-domain 3D class-incremental learning: <a href="https://arxiv.org/abs/2609.04860" target="_blank" rel="noopener"><em>Mitigating Performance Discrepancy in Cross-Domain 3D Class-Incremental Learning</em></a>.</span></li>
-          <li><time>2026-06</time><span><em>EgoCal</em> received the <strong>Best Paper Runner-Up</strong> award at the MetaFood Workshop @ <strong>CVPR 2026</strong>.</span></li>
-          <li><time>2026-06</time><span>Our paper on temporal imbalance in class-incremental learning was presented at <strong>CVPR 2026</strong>.</span></li>
-          <li><time>2024-12</time><span>Presented <em>MFP3D</em> as an <strong>oral</strong> at the MADiMa Workshop @ <strong>ICPR 2024</strong>.</span></li>
-          <li><time>2023-04</time><span>Our co-first-author paper <a href="https://dl.acm.org/doi/10.1145/3543507.3587430" target="_blank" rel="noopener"><em>A Prompt Log Analysis of Text-to-Image Generation Systems</em></a> appeared at <strong>The Web Conference (WWW 2023)</strong>.</span></li>
+          <li><time>2026-10</time>
+            <span data-l="en">Passed my preliminary exam and became a <strong>Ph.D. candidate</strong>. <a href="assets/pdf/prelim_slides.pdf" target="_blank" rel="noopener">[Slides]</a></span>
+            <span data-l="zh">通过博士资格考试（prelim），成为<strong>博士候选人</strong>。<a href="assets/pdf/prelim_slides.pdf" target="_blank" rel="noopener">[幻灯片]</a></span></li>
+          <li><time>2026-09</time>
+            <span data-l="en">New preprint on cross-domain 3D class-incremental learning: <a href="https://arxiv.org/abs/2609.04860" target="_blank" rel="noopener"><em>Mitigating Performance Discrepancy in Cross-Domain 3D Class-Incremental Learning</em></a>.</span>
+            <span data-l="zh">发布跨域 3D 类增量学习的新预印本：<a href="https://arxiv.org/abs/2609.04860" target="_blank" rel="noopener"><em>Mitigating Performance Discrepancy in Cross-Domain 3D Class-Incremental Learning</em></a>。</span></li>
+          <li><time>2026-06</time>
+            <span data-l="en"><em>EgoCal</em> received the <strong>Best Paper Runner-Up</strong> award at the MetaFood Workshop @ <strong>CVPR 2026</strong>.</span>
+            <span data-l="zh"><em>EgoCal</em> 获得 MetaFood Workshop @ <strong>CVPR 2026</strong> <strong>最佳论文亚军</strong>（Best Paper Runner-Up）。</span></li>
+          <li><time>2026-06</time>
+            <span data-l="en">Our paper on temporal imbalance in class-incremental learning was presented at <strong>CVPR 2026</strong>.</span>
+            <span data-l="zh">我们关于类增量学习中正负监督时间不平衡问题的论文在 <strong>CVPR 2026</strong> 上展示。</span></li>
+          <li><time>2024-12</time>
+            <span data-l="en">Presented <em>MFP3D</em> as an <strong>oral</strong> at the MADiMa Workshop @ <strong>ICPR 2024</strong>.</span>
+            <span data-l="zh">在 MADiMa Workshop @ <strong>ICPR 2024</strong> 上以<strong>口头报告</strong>形式展示 <em>MFP3D</em>。</span></li>
+          <li><time>2023-04</time>
+            <span data-l="en">Our co-first-author paper <a href="https://dl.acm.org/doi/10.1145/3543507.3587430" target="_blank" rel="noopener"><em>A Prompt Log Analysis of Text-to-Image Generation Systems</em></a> appeared at <strong>The Web Conference (WWW 2023)</strong>.</span>
+            <span data-l="zh">共同第一作者论文 <a href="https://dl.acm.org/doi/10.1145/3543507.3587430" target="_blank" rel="noopener"><em>A Prompt Log Analysis of Text-to-Image Generation Systems</em></a> 发表于 <strong>The Web Conference（WWW 2023）</strong>。</span></li>
         </ul>
       </section>
 
       <section id="publications">
-        <h2>Publications <a class="note" href="https://scholar.google.com/citations?user=xl5EUwcAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar →</a></h2>
-        <p class="note">* denotes equal contribution.</p>
+        <h2><span><span data-l="en">Publications</span><span data-l="zh">论文</span></span> <a class="note" href="https://scholar.google.com/citations?user=xl5EUwcAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar →</a></h2>
+        <p class="note"><span data-l="en">* denotes equal contribution.</span><span data-l="zh">* 表示同等贡献。</span></p>
 
-        <h3 class="group">Under Review</h3>
+        <h3 class="group"><span data-l="en">Under Review</span><span data-l="zh">审稿中</span></h3>
         <article class="pub">
           <div class="pub-thumb"><img src="assets/img/pubs/domain3d-cil.jpg" alt="CAD and real or corrupted point clouds of the same classes" loading="lazy"></div>
           <div>
@@ -108,7 +154,7 @@
           </div>
         </article>
 
-        <h3 class="group">Conference Papers</h3>
+        <h3 class="group"><span data-l="en">Conference Papers</span><span data-l="zh">会议论文</span></h3>
         <article class="pub">
           <div class="pub-thumb"><img src="assets/img/pubs/open-knead.jpg" alt="Overview of the Open-KNEAD nutrition estimation pipeline" loading="lazy"></div>
           <div>
@@ -174,7 +220,7 @@
           </div>
         </article>
 
-        <h3 class="group">Workshop Papers</h3>
+        <h3 class="group"><span data-l="en">Workshop Papers</span><span data-l="zh">Workshop 论文</span></h3>
         <article class="pub">
           <div class="pub-thumb"><img src="assets/img/pubs/egocal.jpg" alt="Continuous egocentric caloric tracking compared with a VLM baseline" loading="lazy"></div>
           <div>
@@ -213,7 +259,7 @@
           </div>
         </article>
 
-        <h3 class="group">Preprints</h3>
+        <h3 class="group"><span data-l="en">Preprints</span><span data-l="zh">预印本</span></h3>
         <article class="pub">
           <div class="pub-thumb"><img src="assets/img/pubs/implicit-scale.jpg" alt="Multi-food volume estimation from a monocular image" loading="lazy"></div>
           <div>
@@ -240,41 +286,65 @@
       </section>
 
       <section id="talks">
-        <h2>Talks</h2>
+        <h2><span data-l="en">Talks</span><span data-l="zh">报告</span></h2>
         <div class="entry">
           <span class="what">Adaptive Visual Systems Guided by Data Characteristics and Task Requirements</span>
-          <span class="when">Oct 2026</span>
-          <span class="detail">Ph.D. Preliminary Examination, Elmore Family School of Electrical and Computer Engineering, Purdue University</span>
+          <span class="when"><span data-l="en">Oct 2026</span><span data-l="zh">2026 年 10 月</span></span>
+          <span class="detail"><span data-l="en">Ph.D. Preliminary Examination, Elmore Family School of Electrical and Computer Engineering, Purdue University</span><span data-l="zh">博士资格考试，普渡大学 Elmore 电子与计算机工程学院</span></span>
           <div class="links">
-            <a href="assets/pdf/prelim_slides.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-person-chalkboard"></i>Slides</a>
+            <a href="assets/pdf/prelim_slides.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-person-chalkboard"></i><span data-l="en">Slides</span><span data-l="zh">幻灯片</span></a>
           </div>
         </div>
       </section>
 
       <section id="education">
-        <h2>Education</h2>
+        <h2><span data-l="en">Education</span><span data-l="zh">教育经历</span></h2>
         <div class="entry">
-          <span class="what">Purdue University — Ph.D. in Electrical and Computer Engineering</span>
-          <span class="when">2023 – present</span>
-          <span class="detail">Advisor: <a href="https://engineering.purdue.edu/~zhu0/" target="_blank" rel="noopener">Prof. Fengqing Maggie Zhu</a> · Ph.D. candidate since Oct 2026</span>
+          <span class="what"><span data-l="en">Purdue University — Ph.D. in Electrical and Computer Engineering</span><span data-l="zh">普渡大学 — 电子与计算机工程 博士</span></span>
+          <span class="when"><span data-l="en">2023 – present</span><span data-l="zh">2023 – 至今</span></span>
+          <span class="detail"><span data-l="en">Advisor: <a href="https://engineering.purdue.edu/~zhu0/" target="_blank" rel="noopener">Prof. Fengqing Maggie Zhu</a> · Ph.D. candidate since Oct 2026</span><span data-l="zh">导师：<a href="https://engineering.purdue.edu/~zhu0/" target="_blank" rel="noopener">Fengqing Maggie Zhu 教授</a> · 2026 年 10 月起为博士候选人</span></span>
         </div>
         <div class="entry">
-          <span class="what">University of Michigan — M.S. in Electrical and Computer Engineering</span>
+          <span class="what"><span data-l="en">University of Michigan — M.S. in Electrical and Computer Engineering</span><span data-l="zh">密歇根大学 — 电子与计算机工程 硕士</span></span>
           <span class="when">2021 – 2023</span>
-          <span class="detail">Advisor: <a href="https://public.websites.umich.edu/~qmei/" target="_blank" rel="noopener">Prof. Qiaozhu Mei</a></span>
+          <span class="detail"><span data-l="en">Advisor: <a href="https://public.websites.umich.edu/~qmei/" target="_blank" rel="noopener">Prof. Qiaozhu Mei</a></span><span data-l="zh">导师：<a href="https://public.websites.umich.edu/~qmei/" target="_blank" rel="noopener">Qiaozhu Mei 教授</a></span></span>
         </div>
         <div class="entry">
-          <span class="what">University of Chinese Academy of Sciences — B.E. in Electronic and Information Engineering</span>
+          <span class="what"><span data-l="en">University of Chinese Academy of Sciences — B.E. in Electronic and Information Engineering</span><span data-l="zh">中国科学院大学 — 电子信息工程 学士</span></span>
           <span class="when">2016 – 2020</span>
-          <span class="detail">Advisor: <a href="https://people.ucas.ac.cn/~qxye" target="_blank" rel="noopener">Prof. Qixiang Ye</a></span>
+          <span class="detail"><span data-l="en">Advisor: <a href="https://people.ucas.ac.cn/~qxye" target="_blank" rel="noopener">Prof. Qixiang Ye</a></span><span data-l="zh">导师：<a href="https://people.ucas.ac.cn/~qxye" target="_blank" rel="noopener">Qixiang Ye 教授</a></span></span>
         </div>
       </section>
     </main>
   </div>
 
-  <footer>© 2026 Jinge Ma · Last updated November 2026</footer>
+  <footer><span data-l="en">© 2026 Jinge Ma · Last updated November 2026</span><span data-l="zh">© 2026 马金戈 · 最后更新于 2026 年 11 月</span></footer>
 
   <script>
+    // Chinese / English toggle. Paper entries stay in English; every other text has a data-l="en" and a data-l="zh" copy.
+    (function () {
+      var root = document.documentElement;
+      var btn = document.getElementById('lang-toggle');
+      function current() { return root.lang.indexOf('zh') === 0 ? 'zh' : 'en'; }
+      function apply(lang) {
+        root.lang = lang === 'zh' ? 'zh-CN' : 'en';
+        document.title = lang === 'zh' ? '马金戈 | Jinge Ma' : 'Jinge Ma';
+        var label = lang === 'zh' ? 'Switch to English' : '切换到中文';
+        btn.title = label;
+        btn.setAttribute('aria-label', label);
+      }
+      apply(current());
+      btn.addEventListener('click', function () {
+        var next = current() === 'zh' ? 'en' : 'zh';
+        apply(next);
+        try { localStorage.setItem('lang', next); } catch (e) {}
+        try {
+          var url = new URL(location.href);
+          if (url.searchParams.has('lang')) { url.searchParams.set('lang', next); history.replaceState(null, '', url); }
+        } catch (e) {}
+      });
+    })();
+
     // Email is never written in the page source: it is assembled only when a visitor clicks.
     (function () {
       var parts = ['958am', 'ude.eudrup'];
